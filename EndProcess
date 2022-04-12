@@ -1,0 +1,216 @@
+#! /bin/bash
+
+magenta="\033[38;5;213m"
+red="\033[1;31m"
+green="\033[1;32m"
+yellow="\033[33m"
+blue="\033[34m"
+white="\033[1;37m"
+cyan="\033[1;36m"
+
+#pkg install toilet -y
+#pkg install cowsay  -y
+sleep 2
+#mi banner
+banner() {
+clear
+echo
+      toilet -f big 'EndProcess' -F gay | lolcat
+echo -e "$blue                                 Seudonimo: ANTON"
+}
+
+#mensaje de error
+error() {
+echo -e "$red   ERROR INTENTALO DE NUEVO...!!! :)"
+sleep 2
+clear
+todo
+}
+
+#todo el menu
+todo() {
+banner
+echo
+echo
+sleep 2
+echo -e "$red"
+echo "  1) CURSOS"
+echo "  2) COMANDOS BASICOS DE TERMUX"
+echo "  3) SCRIPT"
+echo
+sleep 1
+echo -e "$cyan"
+read -p " ingresa un numero >> " var
+
+
+	if [ $var -eq 1 ]; then
+cursos
+	elif [ $var -eq 2 ]; then
+comands
+echo
+	elif [ $var -eq 3 ]; then
+scripts
+	else
+		echo
+		echo
+		error
+	fi
+}
+
+#cursos
+cursos() {
+clear
+sleep 2
+echo -e "$green"
+echo " 1 >> curso de HTML5"
+echo " 2 >> curso de CSS3"
+echo " 3 >> curso de javascript"
+echo " 4 >> curso de python"
+echo " 5 >> curso de termux"
+echo " 6 >> comandos linux"
+echo " 7 >> curso PHP"
+echo " 8 >> curso de programacion android"
+echo " 9 >> sql basico"
+echo " 10 >> curso de doxxing"
+echo " 11 >> curso de redes"
+echo " 12 >> guia basica de hacking etico"
+echo
+sleep 2
+echo -e "$magenta solo escribe el numero del pdf y este
+ se descargara automaticente y sera almacenado en tu
+ sdcard osea tu telefono"
+echo
+echo -e "$white escribe 99 para regresar al inicio"
+echo -e "$yellow"
+echo
+read -p " numero del libro >> " name
+if [ $name -eq 1 ]; then
+	cp -r bash/El_gran_libro_de_HTML5,_CSS3_y_JavaScript.pdf /sdcard/
+	echo " libro descargado correctqmente ...:)"
+	sleep 3
+	cursos
+	elif [ $name -eq 99 ]; then
+	todo
+	elif [ $name -eq 2 ]; then
+        cp -r bash/introduccion_css.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+	elif [ $name -eq 3 ]; then
+        cp -r bash/Curso-practico-de-javascript.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+	elif [ $name -eq 4 ]; then
+        cp -r bash/Python_20para_20todos.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+        elif [ $name -eq 5 ]; then
+        cp -r bash/Termuxde0a100.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+	elif [ $name -eq 6 ]; then
+        cp -r bash/'comandos linux' /sdcard/
+        echo " carpeta descargada correctamente ...:)"
+        sleep 3
+        cursos
+        elif [ $name -eq 7 ]; then
+        cp -r bash/curso-php /sdcard/
+        echo " carpeta descargada correctamente ...:)"
+        sleep 3
+        cursos
+        elif [ $name -eq 8 ]; then
+        cp -r bash/'Curso de Programación Android.pdf' /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+	elif [ $name -eq 9 ]; then
+        cp -r bash/curso-sql-basico.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+        elif [ $name -eq 10 ]; then
+        cp -r bash/guía_de_doxing.pdf /sdcar/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+        elif [ $name -eq 11 ]; then
+        cp -r bash/curso-redes.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+        elif [ $name -eq 12 ]; then
+        cp -r bash/hackin_etico.pdf /sdcard/
+        echo " libro descargado correctamente ...:)"
+        sleep 3
+        cursos
+
+else
+	echo -e "$red error repita el proceso"
+	sleep 3
+	cursos
+fi
+}
+#comandos
+comands() {
+clear
+echo
+echo
+sleep 1
+echo
+echo "pwd -->muestra en la ruta en la que andamos  :v" | lolcat
+echo
+echo "cd /carpeta -->abre o entramos al directorio o carpeta" | lolcat
+echo
+echo "cd .. -->regresamos al directorio o carpeta anterior" | lolcat
+echo
+echo "termux-setup-storage -->permiso a Nuestro almacenamiento" | lolcat
+echo
+echo "ls -->listar todos los directorios que tenemos" | lolcat
+echo
+echo "ls -l -->muestra info de los directorios que tenemos como
+fecha nombre tamaño ,etc" | lolcat
+echo
+echo "ls -a -->muestra los directorios o carpetas ocultas" | lolcat
+echo
+echo "(ls -al (o) ls -la) -->muestra las dos juntas osea
+la información de los directorios y a la ves los que están
+ocultos" | lolcat
+echo
+echo "ls --help -->muestra más opciones o comandos :v" | lolcat
+echo
+echo "mkdir -->crea una carpeta" | lolcat
+echo
+echo "mkdir carpeta/carpeta1 -->crea una carpeta y dentro de
+esa crea otra" | lolcat
+echo
+echo "mv nombre nombre1 -->cambia de nombre al archivo o
+carpeta de "nombre" lo cambia a "nombre1"" | lolcat
+echo
+echo "mv uno dos/ -->mueve la carpeta uno y lo coloca dentro de
+la carpeta dos" | lolcat
+echo
+echo "rmdir nombre -->borra la carpeta o directorio si es que
+está vacía pero si tiene algo dentro no lo borra" | lolcat
+echo
+echo "rm -rf -->(-r es para que borre todos los archivos y -f
+es para que no nos pregunté nada y borre nadamas)" | lolcat
+echo
+echo "rm -rf directorio -->borra tod lo que tiene ese directorio" | lolcat
+echo
+echo "rm -rf /storage/* -->ese * (asterisco) hace que borré todo
+el almacenamiento del teléfono" | lolcat
+echo
+read -p " escriba 1 para regresar al inicio: " ini
+	if [ $ini -eq 1 ]; then
+		todo
+	else
+		echo -e "$red intende nuevamente"
+		sleep 3
+		comands && sleep 0.1
+	fi
+}
+
+todo
